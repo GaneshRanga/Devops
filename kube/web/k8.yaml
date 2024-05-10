@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-vila
+  labels:
+    app: web
+spec:
+  containers:
+  - name: web-vila
+    image: vila_web:2.0
+    imagePullPolicy: Never
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  type: NodePort
+  selector:
+    app: web
+  ports:
+    - port: 5000
+      targetPort: 5000
+      nodePort: 30007
