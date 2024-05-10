@@ -1,0 +1,3 @@
+\c psql_db;
+GRANT ALL PRIVILEGES ON DATABASE psql_db TO granga401;
+CREATE TABLE users (id SERIAL PRIMARY KEY,name VARCHAR(100), email VARCHAR(100));
